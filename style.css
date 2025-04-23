@@ -1,0 +1,156 @@
+/* FileGuard Styles v1.4.0 - Updated for Gmail 2024 */
+.fileguard-btn-container {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+  position: relative;
+  z-index: 2147483647;
+}
+
+.fileguard-scan-btn {
+  all: unset;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font: 500 12px 'Google Sans', Roboto, sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  transition: background-color 0.2s;
+}
+
+.fileguard-scan-btn:hover {
+  background-color: #1765cc;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.fileguard-scan-btn.scanning {
+  background-color: #f9ab00;
+  cursor: progress;
+}
+
+.fileguard-scan-btn.clean {
+  background-color: #0b8043;
+}
+
+.fileguard-scan-btn.suspicious {
+  background-color: #f9ab00;
+}
+
+.fileguard-scan-btn.malicious {
+  background-color: #d93025;
+}
+
+.fileguard-report-link {
+  display: inline-block;
+  margin-left: 8px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.fileguard-report-link:hover {
+  opacity: 1;
+}
+
+.fileguard-result {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  font: 13px/1.4 'Google Sans', Roboto;
+  position: relative;
+  z-index: 2147483646;
+  animation: fadeIn 0.15s ease-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fileguard-result.status-clean {
+  background: #e6f4ea;
+  color: #0b8043;
+  border-left: 3px solid #0b8043;
+}
+
+.fileguard-result.status-suspicious {
+  background: #fef7e0;
+  color: #f29900;
+  border-left: 3px solid #f9ab00;
+}
+
+.fileguard-result.status-malicious {
+  background: #fce8e6;
+  color: #d93025;
+  border-left: 3px solid #d93025;
+}
+
+.fileguard-status {
+  font-weight: 500;
+}
+
+.fileguard-message {
+  color: #5f6368;
+  font-size: 12px;
+}
+
+.fileguard-loading {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+.vt-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #1a73e8;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.vt-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Gmail-specific overrides */
+div[role="listitem"] .fileguard-btn-container {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-left: 8px !important;
+}
+
+div[role="listitem"] .fileguard-result {
+  margin-left: 40px;
+  max-width: calc(100% - 40px);
+}
+
+/* Ensure button appears next to attachments */
+a[href$=".pdf"],
+a[href$=".txt"],
+a[href$=".docx"],
+a[href$=".xls"],
+a[href$=".csv"],
+a[href$=".xlsx"],
+a[href$=".doc"],
+a[href$=".rtf"],
+a[href$=".odt"],
+a[href$=".ods"] {
+  display: inline-block;
+  margin-right: 8px;
+}

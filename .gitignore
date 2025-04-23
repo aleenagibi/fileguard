@@ -1,3 +1,33 @@
+<<<<<<< HEAD
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+*.code-workspace
+
+# Node modules
+node_modules/
+
+# Build files
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+test_files/
+
+# Temporary files
+*.tmp
+*.temp 
+=======
 # generated files
 target/
 generated/
@@ -9,3 +39,4 @@ Dependencies.toml
 Config.toml
 # the config files used for testing, Uncomment the following line if you want to commit the test config files
 #!**/tests/Config.toml
+>>>>>>> 6e8835d4be0ed1d8fb4b7d65325a3d3889e8403c
